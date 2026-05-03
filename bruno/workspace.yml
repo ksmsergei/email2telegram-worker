@@ -1,0 +1,18 @@
+opencollection: 1.0.0
+info:
+  name: "email2telegram-worker"
+  type: workspace
+
+collections:
+  - name: "Cloudflare Email Worker"
+    path: "../Cloudflare Email Worker"
+  - name: "Telegram Bot API"
+    path: "../Telegram Bot API"
+  - name: "Cloudflare Email Worker"
+    path: "collections/Cloudflare Email Worker"
+  - name: "Telegram Bot API"
+    path: "collections/Telegram Bot API"
+
+specs:
+
+docs: ''

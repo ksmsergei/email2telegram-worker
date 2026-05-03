@@ -1,0 +1,24 @@
+meta {
+  name: Get Updates
+  type: http
+  seq: 1
+}
+
+docs {
+  Get incoming updates from Telegram Bot API (getUpdates).
+}
+
+get {
+  url: {{apiUrl}}/getUpdates
+  body: none
+  auth: none
+}
+
+headers {
+  User-Agent: insomnia/12.5.0
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

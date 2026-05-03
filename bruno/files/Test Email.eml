@@ -1,0 +1,19 @@
+MIME-Version: 1.0
+Date: Sat, 2 May 2026 23:41:11 +0500
+Message-ID: <REDACTED@mail.gmail.com>
+Subject: Test Subject
+From: Test User <test@example.com>
+To: notify@example.com
+Content-Type: multipart/alternative; boundary="000000000000bd371d0650da0a04"
+
+--000000000000bd371d0650da0a04
+Content-Type: text/plain; charset="UTF-8"
+
+Test Body
+
+--000000000000bd371d0650da0a04
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Test Body</div>
+
+--000000000000bd371d0650da0a04--

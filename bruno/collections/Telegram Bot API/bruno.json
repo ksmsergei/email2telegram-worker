@@ -1,0 +1,15 @@
+{
+  "version": "1",
+  "name": "Telegram Bot API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
+  "size": 0.0008306503295898438,
+  "filesCount": 4,
+  "presets": {
+    "requestType": "http",
+    "requestUrl": "{{apiUrl}}"
+  }
+}

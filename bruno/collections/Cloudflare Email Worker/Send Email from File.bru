@@ -1,0 +1,60 @@
+meta {
+  name: Send Email from File
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{apiUrl}}?from={{fromEmail}}&to={{toEmail}}
+  body: file
+  auth: none
+}
+
+params:query {
+  from: {{fromEmail}}
+  to: {{toEmail}}
+}
+
+headers {
+  Content-Type: message/rfc822
+}
+
+body:file {
+  file: @file(D:\dev\web\cloudflare\email2telegram-worker\bruno\files\Test Email.eml) @contentType(message/rfc822)
+}
+
+script:pre-request {
+  const rawBody = req.body ?? req.req?.data;
+  
+  const fileContent = Buffer.from(Object.values(rawBody)).toString('utf8');
+  
+  function parseAddress(header) {
+      // From: Name <email>
+      const withBrackets = header.match(/<([^>]+)>/);
+      if (withBrackets) return withBrackets[1];
+      
+      // From: email
+      const withoutBrackets = header.match(/:\s*([^\s]+@[^\s]+)/);
+      if (withoutBrackets) return withoutBrackets[1];
+      
+      return '';
+  }
+  
+  const fromHeader = fileContent.match(/^From:(.+)/m)?.[1] ?? '';
+  const toHeader = fileContent.match(/^To:(.+)/m)?.[1] ?? '';
+  
+  const from = parseAddress('From:' + fromHeader);
+  const to = parseAddress('To:' + toHeader);
+  
+  bru.setVar("fromEmail", from);
+  bru.setVar("toEmail", to);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  Send email from local .eml file to test Cloudflare Worker.
+}

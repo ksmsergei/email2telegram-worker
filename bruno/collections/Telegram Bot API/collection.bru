@@ -1,0 +1,6 @@
+vars:pre-request {
+  telegramApi: https://api.telegram.org
+  botToken: {{process.env.BOT_TOKEN}}
+  apiUrl: {{telegramApi}}/bot{{botToken}}
+  chatId: {{process.env.CHAT_ID}}
+}

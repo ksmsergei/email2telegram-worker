@@ -1,0 +1,15 @@
+{
+  "version": "1",
+  "name": "Cloudflare Email Worker",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
+  "size": 0.0020246505737304688,
+  "filesCount": 4,
+  "presets": {
+    "requestType": "http",
+    "requestUrl": "{{apiUrl}}"
+  }
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Send Message
+  type: http
+  seq: 2
+}
+
+docs {
+  Send message directly from Telegram bot to specified chat.
+}
+
+post {
+  url: {{apiUrl}}/sendMessage
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/12.5.0
+}
+
+body:json {
+  {
+    "chat_id": "{{chatId}}",
+    "text": "{{$randomWords}}"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
