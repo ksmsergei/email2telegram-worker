@@ -1,6 +1,6 @@
 # Email to Telegram Worker
 
-A Cloudflare Worker that intercepts incoming emails and routes them to a designated Telegram chat instead of a bot.
+A Cloudflare Worker that intercepts incoming emails and routes them to a designated Telegram chat.
 
 ## Prerequisites
 
